@@ -1,0 +1,80 @@
+<form id="persiste" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="view" value="{view}"/>
+    <input type="hidden" name="rota" value="{rota}"/>
+    <input type="hidden" name="id" value="{id}"/>
+    <div class="row">
+        <div class="col-sm-12 col-md-9">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 mb20">
+                    <input type="text" name="codigo" class="form-control" placeholder="codigo" value="{codigo}" required/>
+                </div>
+                <div class="col-sm-9 col-md-9 mb20">
+                    <input type="text" name="nome" class="form-control" placeholder="Descricao Produto" value="{descricao}" required/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <input type="text" name="marca" class="form-control" placeholder="Marca" value="{marca}"/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <input type="text" name="modelo" class="form-control" placeholder="Modelo" value="{modelo}"/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <input type="text" name="numeroserie" class="form-control" placeholder="Numero de Serie" value="{numeroserie}"/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <input type="text" name="dtaquisicao" class="form-control dt-all" placeholder="Data Aquisição" value="{dtaquisicao}"/>
+                </div>
+                <div class="col-sm-12 col-md-4 mb20">
+                    <input type="text" name="dtgarantia" class="form-control  dt-all" placeholder="Data da Garantia" value="{dtgarantia}"/>
+                </div>
+                <div class="col-sm-12 col-md-4 mb20">
+                    <input type="text" name="valor" class="form-control" placeholder="Valor do Produto" value="{valor}"/>
+                </div>
+                <div class="col-sm-12 col-md-4 mb20">
+                    <input type="text" name="valordepreciacao" class="form-control" placeholder="Taxa Depreciação Anual" value="{valordepreciacao}"/>
+                </div>
+                <div class="col-sm-12 col-md-6 mb20">
+                    <select id="selectsetor" name="setor" class="form-control" data-placeholder="Setor" required>
+                        {IDsetor}
+                        {setor}
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 mb20">
+                    <select id="selectfuncionario" name="funcionario" class="form-control" data-placeholder="Responsável" required>
+                        {IDresponsavel}
+                        {responsavel}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="input-group mb15">
+                <input type="file" name="arquivo" id="arquivo" class="arquivo">
+                <input type="text" id="textfile" class="form-control" placeholder="Arquivo Imagem" readonly="readonly">
+                <span class="input-group-btn">
+                  <button id="btn-select" type="button" class="btn btn-default">SELECIONAR</button>
+                </span>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">
+
+                </div>
+                <div class="panel-body">
+                    <div id="thumb" class="img-backdrop height-5" style="background-image: url('../resources/image/inventario/{imagem}');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="btn-group pull-right"><a class="btn btn-danger mr5" href="../inventario">Cancelar</a>
+                        <button id="btnsalvar-inventario" class="btn btn-success " type="submit"><i class="fa fa-save"></i> Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

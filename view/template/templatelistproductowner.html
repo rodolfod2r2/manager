@@ -1,0 +1,41 @@
+<form id="persiste{id}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="view" value="{view}"/>
+    <input type="hidden" name="rota" value="{rota}"/>
+    <input type="hidden" name="id" value="{id}"/>
+    <!--<input type="hidden" name="idh" value=""/>-->
+    <div class="col-sm-6 col-md-4 col-lg-3 recycle-adapter ">
+        <div class="profile-left mb20 view-holder">
+            <div class="profile-left-heading">
+                <ul class="panel-options">
+                    <li><a href="../productowner/editar/{id}"><i class="glyphicon glyphicon-edit"></i></a></li>
+                </ul>
+                <div class="profile-photo">
+                    <img alt="" src="../resources/image/recepcao/{imagem}" class="img-circle img-responsive">
+                </div>
+                <h2 class="profile-name">{nome}</h2>
+                <h4 class="profile-designation">{tipo}</h4>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <button type="submit" data-id="{id}" class="btn btn-success btn-quirk center-block profile-btn-follow ativar-productowner">
+                            {botao}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-left-body">
+                <h4 class="panel-title mb5">Setor</h4>
+                <div class="form-group padding10">
+                    <select id="select1" name="setor" class="form-control" data-placeholder="Setor">
+                        {setor}
+                    </select>
+                </div>
+                <h4 class="panel-title mb5">Responsável</h4>
+                <div class="form-group padding10">
+                    <select id="select2" name="funcionario" class="form-control" data-placeholder="Responsável">
+                        {responsavel}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,60 @@
+<div class="panel panel-profile list-view recycle-adapter">
+    <div class="panel-heading view-holder">
+        <div class="media">
+            <div class="media-left">
+               <img class="media-object img-rounded" style="width: 96px !important; height: 96px !important;" src="../resources/image/inventario/{imagem}" alt="">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{codigo} - {descricao}</h4>
+                <p class="media-usermeta">
+                    <span class='text-primary'>Marca:</span>
+                    <span class='text-danger text-bold'>{marca}</span>
+                    <span class='text-primary'>Modelo:</span>
+                    <span class='text-danger text-bold'>{modelo}</span>
+                    <span class='text-primary'>Número de Série:</span>
+                    <span class='text-danger text-bold'>{numeroserie}</span>
+                </p>
+            </div>
+        </div>
+        <ul class="panel-options">
+            <li><a href='../inventario/editar/{id}' class="btn btn-default btn-quirk text-default">Editar</a></li>
+            <li><div data-id="{id}" class="btn btn-default btn-remove-inventario"><i class="fa fa-trash"></i></div></li>
+        </ul>
+    </div>
+    <div class="panel-body people-info">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Aquisição:</label>{dtaquisicao}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Término Garantia:</label>{dtgarantia}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Valor:</label>{valor}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Depreciação:</label>{valordepreciacao}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="info-group">
+                    <label>Setor</label>{IDsetor}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="info-group">
+                    <label>Responsavel</label>{IDresponsavel}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

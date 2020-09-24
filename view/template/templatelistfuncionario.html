@@ -1,0 +1,94 @@
+<div class="panel panel-profile list-view recycle-adapter">
+    <div class="panel-heading view-holder">
+        <div class="media">
+            <div class="media-left">
+               <img class="media-object img-circle" src="../resources/image/funcionario/{imagem}" alt="">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{nome}</h4>
+                <p class="media-usermeta"><i class="fa fa-institution"></i><span class='text-primary'>Cargo:</span>
+                    <span class='text-danger text-bold'>{cargo}</span> <span class='text-primary'>Setor:</span> <span
+                            class='text-danger text-bold'>{setor}</span> <span class='text-primary'>Telefone:</span>
+                    <span class='text-danger text-bold'>{telefonesetor}</span></p>
+            </div>
+        </div>
+        <ul class="panel-options">
+            <li><a href='../funcionario/editar/{id}' class="btn btn-default btn-quirk text-default">Editar</a></li>
+            <li><div data-id="{id}" class="btn btn-default btn-remove-funcionario"><i class="fa fa-trash"></i></div></li>
+        </ul>
+    </div>
+    <div class="panel-body people-info">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="info-group">
+                    <label>Dt Nasc.</label>
+                    {dtnasc}
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="info-group">
+                    <label>RG</label>
+                    {docrg}
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="info-group">
+                    <label>CPF</label>
+                    {doccpf}
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="info-group">
+                    <label>CTPS</label>
+                    {docctps}
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="info-group">
+                    <label>PIS/PASEP</label>
+                    {docpispasep}
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="info-group">
+                    <label>SALARIO</label>
+                    {salario}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Email</label>
+                    {email}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Senha Crypt</label>
+                    {senha}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Phone</label>
+                    {telefone}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-group">
+                    <label>Nível</label>
+                    {nivel}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="info-group">
+                    <label>Endereço</label>
+                    {cep} {rua} {numero} {bairro} {cidade} {estado}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

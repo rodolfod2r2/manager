@@ -1,0 +1,21 @@
+<form id="persiste" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="view" value="{view}"/>
+    <input type="hidden" name="rota" value="{rota}"/>
+    <input type="hidden" name="id" value="{id}"/>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 mb20">
+                    <input type="text" name="nome" class="form-control" placeholder="Cargo" value="{nome}" required/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="btn-group pull-right"><a class="btn btn-danger mr5" href="../cargo">Cancelar</a>
+                        <button id="btnsalvar-cargo" class="btn btn-success" type="submit"><i class="fa fa-save"></i> Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

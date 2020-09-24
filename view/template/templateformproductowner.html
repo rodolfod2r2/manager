@@ -1,0 +1,133 @@
+<form id="persiste" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="view" value="{view}"/>
+    <input type="hidden" name="rota" value="{rota}"/>
+    <input type="hidden" name="id" value="{id}"/>
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            <input id="imagem" type="hidden" name="productowner_imagem" value="" required/>
+            <button type="button" id="tirarfoto" onClick="preview_snapshot()" class="btn btn-success btn-block">
+                <i class="fa fa-save"></i> Camera
+            </button>
+            <button type="button" class="btn btn-danger btn-block" style="display: none" id="cancelarfoto"
+                    onClick="cancel_preview()">
+                <i class="fa fa-save"></i> Cancelar
+            </button>
+            <div id="my_camera"></div>
+            <div id="results" class="img-responsive"></div>
+        </div>
+        <div class="col-sm-12 col-md-9">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 mb20">
+                    <input type="text" name="nome" class="form-control" placeholder="Nome do productowner" value="{nome}"
+                           required/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <input type="text" name="cpf" class="form-control" placeholder="CPF" value="{cpf}"/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <input type="text" name="rg" class="form-control" placeholder="RG" value="{rg}"/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <input type="text" name="telefone" class="form-control" placeholder="Telefone" value="{telefone}"/>
+                </div>
+                <div class="col-sm-12 col-md-3 mb20">
+                    <select id="select1" name="tipo" class="form-control" data-placeholder="Tipo productowner">
+                        <option value="{tipo}">{tipo}</option>
+                        <option value="productowner">productowner</option>
+                        <option value="Especial">Especial</option>
+                        <option value="Terceirizado">Terceirizado</option>
+                        <option value="Fornecedor">Fornecedor</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-2 mb20">
+                    <input type="text" id="cep" name="cep" class="form-control" placeholder="CEP" value="{cep}"/>
+                </div>
+                <div class="col-sm-12 col-md-8 mb20">
+                    <input type="text" id="logradouro" name="logradouro" class="form-control" placeholder="Logradouro"
+                           value="{logradouro}"/>
+                </div>
+                <div class="col-sm-12 col-md-2 mb20">
+                    <input type="text" id="numero" name="numero" class="form-control" placeholder="Numero"
+                           value="{numero}"/>
+                </div>
+                <div class="col-sm-12 col-md-5 mb20">
+                    <input type="text" id="bairro" name="bairro" class="form-control" placeholder="Bairro"
+                           value="{bairro}"/>
+                </div>
+                <div class="col-sm-12 col-md-5 mb20">
+                    <input type="text" id="cidade" name="cidade" class="form-control" placeholder="Cidade"
+                           value="{cidade}"/>
+                </div>
+                <div class="col-sm-12 col-md-2 mb20">
+                    <input type="text" id="estado" name="estado" class="form-control" placeholder="Estado"
+                           value="{estado}"/>
+                </div>
+                <div class="col-sm-12 col-md-6 mb20">
+                    <select id="selectsetor" name="setor" class="form-control" data-placeholder="Setor" required>
+                        {setor}
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 mb20">
+                    <select id="selectfuncionario" name="funcionario" class="form-control"
+                            data-placeholder="Funcionário" required>
+                        {responsavel}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="btn-group pull-right"><a class="btn btn-danger mr5" href="../productowner">Cancelar</a>
+                        <button id="btnsalvar-productowner" class="btn btn-success " type="submit"><i class="fa fa-save"></i> Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" src="https://sysmanfab.com.br/assets/js/webcam.min.js"></script>
+<script language="JavaScript">
+    Webcam.set({
+        width: 460,
+        height: 340,
+        dest_width: 460,
+        dest_height: 340,
+        crop_width: 360,
+        crop_height: 360,
+        image_format: 'jpeg',
+        jpeg_quality: 100,
+        flip_horiz: true
+    });
+    Webcam.attach('#my_camera');
+
+    function preview_snapshot() {
+        Webcam.snap(function(data_uri) {
+            document.getElementById('imagem').value = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+            document.getElementById('results').innerHTML = '<img id="imageprev" style="display: none" class="img-responsive" src="'+data_uri+'"/>';
+        } );
+        Webcam.freeze();
+        document.getElementById('tirarfoto').style.display = 'none';
+        document.getElementById('cancelarfoto').style.display = '';
+        document.getElementsByTagName('video').item(0).style.display = 'none';
+        document.getElementsByTagName('canvas').item(0).style.width = "100%";
+    }
+
+    function cancel_preview() {
+        // cancel preview freeze and return to live camera feed
+        Webcam.unfreeze();
+
+        // swap buttons back
+        document.getElementById('tirarfoto').style.display = '';
+        document.getElementById('cancelarfoto').style.display = 'none';
+        document.getElementsByTagName('video').item(0).style.display = '';
+    }
+
+    function save_photo() {
+
+        var base64image = document.getElementById("imageprev").src;
+        Webcam.upload( base64image, 'upload.php', function(code, text) {
+            console.log('Save successfully');
+            //console.log(text);
+            Webcam.unfreeze();
+        });
+    }
+</script>

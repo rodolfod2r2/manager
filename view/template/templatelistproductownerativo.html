@@ -1,0 +1,54 @@
+<form id="persiste{id}" data-id="{id}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="view" value="{view}"/>
+    <input type="hidden" name="rota" value="{rota}"/>
+    <input type="hidden" name="id" value="{id}"/>
+    <input type="hidden" name="idhistorico" value="{idhistorico}"/>
+    <div class="col-sm-6 col-md-4 col-lg-3 recycle-adapter ">
+        <div class="profile-left mb20 view-holder">
+            <div class="profile-left-heading">
+                <div class="profile-photo">
+                    <img alt="" src="../resources/image/recepcao/{imagem}" class="img-circle img-responsive">
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h2 class="profile-name">{nome}</h2>
+                        <h4 class="profile-designation">{tipo}</h4>
+                    </div>
+                </div>
+                <div class="row paddingtop20">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <button type="submit" data-id="{id}" class="btn btn-success btn-quirk desativar-productowner pull-left">
+                            {botao}
+                        </button>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <button type="button" class="btn btn-success pull-right" data-toggle="dropdown">
+                            Imprimir Etiqueta <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../view/etiqueta.php?posicao=1&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 01</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=2&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 02</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=3&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 04</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=5&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 05</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=6&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 06</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=7&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 07</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=8&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 08</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=9&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 09</a></li>
+                            <li><a href="../view/etiqueta.php?posicao=10&nome={nome}&tipo={tipo}&setor={setor}" target="_blank">Posicao 10</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-left-body">
+                <h4 class="panel-title mb5">Setor</h4>
+                <div class="form-group padding10">
+                    {setor}
+                </div>
+                <h4 class="panel-title mb5">Responsável</h4>
+                <div class="form-group padding10">
+                    {responsavel}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

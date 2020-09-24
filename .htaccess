@@ -1,0 +1,31 @@
+  <IfModule mod_rewrite.c>
+
+	Options -Indexes
+	RewriteEngine On
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteBase /desenvolvimento/php/manager/
+	#RewriteBase /
+
+    RewriteRule ^index\.html$ / [L]
+	RewriteRule ^([a-z0-9-]+)/?$ view/facade.php?view=$1 [NC,L]
+	RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)/?$ view/facade.php?view=$1&rota=$2 [NC,L]
+	RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)/([a-z0-9-]+)/?$ view/facade.php?view=$1&rota=$2&id=$3 [NC,L]
+
+
+	ErrorDocument 400 /desenvolvimento/php/manager/view/errors/400.html
+	ErrorDocument 401 /desenvolvimento/php/manager/view/errors/401.html
+	ErrorDocument 403 /desenvolvimento/php/manager/view/errors/403.html
+	ErrorDocument 404 /desenvolvimento/php/manager/view/errors/404.html
+	ErrorDocument 500 /desenvolvimento/php/manager/view/errors/500.html
+
+	ErrorDocument 400 /view/errors/400.html
+    ErrorDocument 401 /view/errors/401.html
+    ErrorDocument 403 /view/errors/403.html
+    ErrorDocument 404 /view/errors/404.html
+    ErrorDocument 500 /view/errors/500.html
+	
+
+</IfModule>
+
